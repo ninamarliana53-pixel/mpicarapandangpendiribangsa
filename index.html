@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPI Pancasila: Pemersatu Bangsa</title>
+    <style>
+        @page { margin: 0; }
+        *, *::before, *::after { box-sizing: border-box; }
+        html, body { margin: 0; padding: 0; }
+        html { background-color: #f1f5f9; }
+        @media (prefers-color-scheme: dark) {
+            html { background-color: #0f172a; }
+        }
+        body {
+            padding: 24px 0;
+            margin: 0 auto;
+            max-width: 900px !important;
+            border: none !important;
+            background: transparent !important;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: #1e293b;
+        }
+        .page {
+            height: 297mm;
+            margin: 0 auto 12px auto;
+            padding: 18mm 18mm 12mm 18mm;
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.12);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+        @media screen and (max-width: 600px) {
+            body { padding: 16px 0; }
+            .page { margin: 0 auto 8px auto; border: none; padding: 12px 20px; }
+        }
+        .page-content {
+            flex: 1 1 0;
+            min-height: 0;
+            overflow: hidden;
+        }
+        .page-content > * + * {
+            margin-top: 20px;
+        }
+        .page-footer {
+            flex-shrink: 0;
+            margin-top: auto;
+            padding-top: 4mm;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 8.5pt;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
+        }
+        @media print {
+            *, *::before, *::after {
+                box-shadow: none !important;
+                text-shadow: none !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            body { padding: 0; background: none; }
+            .page {
+                margin: 0;
+                border: none;
+                height: 297mm;
+                break-after: page;
+                page-break-after: always;
+            }
+            .page:last-child { break-after: auto; page-break-after: auto; }
+        }
+        [contenteditable]:focus { outline: none; }
+
+        /* Custom Styling for Interactive Elements */
+        .masthead {
+            background: linear-gradient(135deg, #991b1b 0%, #7f1d1d 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 6px solid #f59e0b;
+        }
+        .masthead h1 {
+            margin: 0 0 6px 0;
+            font-size: 18pt;
+            letter-spacing: -0.5px;
+        }
+        .masthead p {
+            margin: 0;
+            font-size: 10pt;
+            opacity: 0.9;
+        }
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            background: #f8fafc;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+        }
+        .meta-item {
+            font-size: 9pt;
+        }
+        .meta-item strong {
+            display: block;
+            color: #475569;
+            font-size: 8pt;
+            text-transform: uppercase;
+        }
+        .figure-card {
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            padding: 14px;
+            background: #ffffff;
+            transition: all 0.2s;
+        }
+        .figure-card h3 {
+            margin: 0 0 6px 0;
+            font-size: 12pt;
+            color: #991b1b;
+        }
+        .figure-card p {
+            margin: 0;
+            font-size: 9.5pt;
+            line-height: 1.45;
+            color: #334155;
+        }
+        .quiz-container {
+            background: #fdf2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .quiz-title {
+            font-size: 11pt;
+            font-weight: bold;
+            color: #991b1b;
+            margin-bottom: 10px;
+        }
+        .option-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
+        .option-item {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            padding: 8px 12px;
+            margin-bottom: 6px;
+            border-radius: 4px;
+            font-size: 9.5pt;
+            cursor: pointer;
+        }
+        .option-item:hover {
+            border-color: #991b1b;
+            background: #fff5f5;
+        }
+        .badge {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 8.5pt;
+            font-weight: 600;
+        }
+        .timeline-box {
+            border-left: 3px solid #991b1b;
+            padding-left: 12px;
+            margin-top: 8px;
+        }
+        .timeline-item {
+            margin-bottom: 10px;
+        }
+        .timeline-item h4 {
+            margin: 0;
+            font-size: 10pt;
+            color: #0f172a;
+        }
+        .timeline-item p {
+            margin: 2px 0 0 0;
+            font-size: 9pt;
+            color: #475569;
+        }
+    </style>
+</head>
+<body>
+    <div contenteditable="true">
+        <!-- PAGE 1: MODUL & PANDANGAN TOKOH -->
+        <!-- page 1 budget (Standard): masthead 33 + meta 36 + h2 14 + figure-grid 152 + callout 40 + gaps 65 = 340 / 460 words -->
+        <section class="page">
+            <div class="page-content">
+                <div class="masthead">
+                    <span class="badge">MEDIA PEMBELAJARAN INTERAKTIF (MPI)</span>
+                    <h1>Pancasila sebagai Pemersatu Bangsa</h1>
+                    <p>Modul Gamifikasi & Analisis Cara Pandang Pendiri Negara</p>
+                </div>
+
+                <div class="meta-grid">
+                    <div class="meta-item">
+                        <strong>Guru Pengampu</strong>
+                        NINA, S.Pd.
+                    </div>
+                    <div class="meta-item">
+                        <strong>Satuan Pendidikan</strong>
+                        SMAN 1 KARAWANG
+                    </div>
+                    <div class="meta-item">
+                        <strong>Target Belajar</strong>
+                        Kelas X / Fase E (Pancasila)
+                    </div>
+                </div>
+
+                <div>
+                    <h2 style="font-size: 13pt; margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #991b1b; padding-bottom: 4px;">
+                        1. Gagasan Pendiri Bangsa (Sidang BPUPK)
+                    </h2>
+                    <p style="font-size: 10pt; line-height: 1.45; margin: 0 0 12px 0; color: #334155;">
+                        Para pendiri negara menyadari bahwa Indonesia adalah bangsa yang majemuk. Pancasila dirumuskan sebagai *Philosofische Grondslag* (dasar filsafat) dan *Weltanschauung* (pandangan hidup) untuk menyatukan beragam suku, agama, dan budaya.
+                    </p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                    <div class="figure-card">
+                        <h3>Mr. Mohammad Yamin</h3>
+                        <p><strong>Gagasan:</strong> Peri Kebangsaan, Peri Kemanusiaan, Peri Ketuhanan, Peri Kerakyatan, dan Kesejahteraan Rakyat.</p>
+                        <p style="margin-top: 6px; font-size: 8.5pt; color: #64748b;">
+                            Menekankan pentingnya persatuan yang berakar dari sejarah, bahasa, dan peradaban nusantara.
+                        </p>
+                    </div>
+
+                    <div class="figure-card">
+                        <h3>Prof. Dr. Soepomo</h3>
+                        <p><strong>Gagasan:</strong> Paham Negara Integralistik (Paham Persatuan).</p>
+                        <p style="margin-top: 6px; font-size: 8.5pt; color: #64748b;">
+                            Negara mengatasi seluruh golongan dan suku. Negara dan rakyat adalah satu kesatuan yang organis.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="figure-card" style="border-left: 4px solid #991b1b;">
+                    <h3>Ir. Sukarno (1 Juni 1945)</h3>
+                    <p><strong>Gagasan:</strong> Kebangsaan Indonesia, Internasionalisme/Peri Kemanusiaan, Mufakat/Demokrasi, Kesejahteraan Sosial, Ketuhanan yang Maha Esa.</p>
+                    <p style="margin-top: 6px; font-size: 8.5pt; color: #64748b;">
+                        Pancasila diibaratkan sebagai *Meja Statis* tempat bersatu seluruh elemen bangsa dan *Leitstar Dinamis* (bintang penuntun) arah perkembangan negara.
+                    </p>
+                </div>
+            </div>
+
+            <footer class="page-footer">
+                <span>Pendidikan Pancasila - SMAN 1 Karawang</span>
+                <span>Halaman 1 dari 2</span>
+            </footer>
+        </section>
+
+        <!-- PAGE 2: GAMIFIKASI & TANTANGAN EVALUASI -->
+        <!-- page 2 budget (Standard): h2 14 + timeline 60 + quiz 180 + box chrome 48 + gaps 52 = 354 / 460 words -->
+        <section class="page">
+            <div class="page-content">
+                <div>
+                    <h2 style="font-size: 13pt; margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #991b1b; padding-bottom: 4px;">
+                        2. Kronologi Diskusi Pemersatu Bangsa
+                    </h2>
+                    <div class="timeline-box">
+                        <div class="timeline-item">
+                            <h4>29 Mei - 1 Juni 1945: Sidang Pertama BPUPK</h4>
+                            <p>Penjajakan gagasan mengenai dasar negara oleh para tokoh nasional.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>22 Juni 1945: Piagam Jakarta</h4>
+                            <p>Pencapaian kesepakatan kompromi antara kelompok kebangsaan dan keagamaan.</p>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>18 Agustus 1945: Penetapan Pancasila (PPKI)</h4>
+                            <p>Pengesahan Pancasila sebagai dasar negara resmi yang menyatukan seluruh wilayah Indonesia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 style="font-size: 13pt; margin: 0 0 8px 0; color: #0f172a; border-bottom: 2px solid #991b1b; padding-bottom: 4px;">
+                        3. Tantangan Gamifikasi (Simulasi Studi Kasus)
+                    </h2>
+                </div>
+
+                <div class="quiz-container">
+                    <div class="quiz-title">Tantangan 1: Analisis Paham Integralistik</div>
+                    <p style="font-size: 9.5pt; margin: 0; color: #334155;">
+                        Dalam sidang BPUPK, Prof. Soepomo mengusulkan paham integralistik untuk menyatukan Indonesia. Maksud utama dari paham ini dalam konteks pemersatu bangsa adalah...
+                    </p>
+                    <ul class="option-list">
+                        <li class="option-item">A. Negara memprioritaskan kelompok mayoritas agar tercapai stabilitas nasional.</li>
+                        <li class="option-item">B. Negara mengatasi segala paham golongan dan perseorangan untuk menyatukan seluruh rakyat.</li>
+                        <li class="option-item">C. Setiap daerah diberikan kebebasan penuh tanpa terikat keputusan pemerintah pusat.</li>
+                        <li class="option-item">D. Pembentukan negara berdasar pada kekuatan militer tunggal.</li>
+                    </ul>
+                </div>
+
+                <div class="quiz-container" style="background: #f0fdf4; border-color: #bbf7d0;">
+                    <div class="quiz-title" style="color: #166534;">Tantangan 2: Pancasila sebagai Bintang Penuntun</div>
+                    <p style="font-size: 9.5pt; margin: 0; color: #334155;">
+                        Ir. Sukarno menyebut Pancasila sebagai *Leitstar Dinamis*. Bagaimana penerapan prinsip ini oleh siswa dalam menjaga persatuan di SMAN 1 Karawang?
+                    </p>
+                    <ul class="option-list">
+                        <li class="option-item">A. Mengikuti kegiatan sekolah hanya jika bersama teman sekelompok.</li>
+                        <li class="option-item">B. Menghargai perbedaan pendapat dan bergotong royong tanpa membedakan latar belakang.</li>
+                        <li class="option-item">C. Membentuk organisasi khusus berdasarkan kesamaan daerah asal.</li>
+                        <li class="option-item">D. Menolak perbedaan pandangan dalam diskusi kelompok.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <footer class="page-footer">
+                <span>Rencana Tindak Lanjut (RTL) - Lembar Kerja Guru</span>
+                <span>Halaman 2 dari 2</span>
+            </footer>
+        </section>
+    </div>
+</body>
+</html>
